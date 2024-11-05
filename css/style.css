@@ -208,10 +208,16 @@ button:active {
 
 .button-group {
     display: flex;
-    gap: 10px;
-    /* Espaçamento entre os botões */
-    justify-content: center;
-    /* Centraliza os botões no contêiner */
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center; /* Centraliza os botões no contêiner */
+    flex-wrap: wrap; /* Permite que os botões quebrem linha */
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column; /* Muda para uma coluna no mobile */
+        align-items: center; /* Centraliza os botões */
+    }
 }
 
 .button-group button {
