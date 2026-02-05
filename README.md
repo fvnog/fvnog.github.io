@@ -73,10 +73,7 @@ Timeline completa com 3 posições:
 - **Resultar Mind** (2023) - Desenvolvedor Full Stack
 - **Freelance** (2020 - 2023) - Desenvolvedor Web Full Stack
 
-### 5. Sobre Mim
-Texto detalhado sobre trajetória, expertise e filosofia profissional.
-
-### 6. Contato
+### 5. Contato
 - Email: fernandovnc1@gmail.com
 - WhatsApp: +55 (33) 9 9992-8568
 - Links para redes sociais
