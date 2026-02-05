@@ -1,420 +1,643 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Fernando Vitor Nogueira Caldas - Desenvolvedor Full Stack</title>
-    <meta name="description"
-        content="Portfólio de Fernando Vitor Nogueira Caldas, desenvolvedor Full Stack com experiência em PHP, MySQL, JavaScript e frameworks modernos. Explore meus projetos e competências.">
-
-    <!-- Favicon -->
+    <title>Fernando Nogueira | Full Stack Developer</title>
+    <meta name="description" content="Portfólio de Fernando Vitor Nogueira Caldas, especialista em Laravel, PHP, Bancos Híbridos e IA.">
+    
     <link rel="icon" href="img/icon.png" type="image/png">
 
-    <!-- SEO para Google -->
-    <meta name="robots" content="index, follow">
-    <meta name="keywords"
-        content="Fernando Vitor Nogueira Caldas, Desenvolvedor Full Stack, Portfólio, PHP, MySQL, JavaScript, Bootstrap, Programação, Desenvolvimento Web, GraphQL, React, Node.js">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Open Graph para Facebook -->
-    <meta property="og:title" content="Portfólio de Fernando Vitor Nogueira Caldas - Desenvolvedor Full Stack">
-    <meta property="og:description"
-        content="Confira o portfólio de Fernando Vitor Nogueira Caldas, com projetos de desenvolvimento web e aplicações utilizando tecnologias como PHP, MySQL, JavaScript e muito mais.">
-    <meta property="og:image" content="img/portfolio_cover.png">
-    <meta property="og:url" content="https://fvnog.github.io/">
-    <meta property="og:type" content="website">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portfólio de Fernando Vitor Nogueira Caldas - Desenvolvedor Full Stack">
-    <meta name="twitter:description"
-        content="Explore o portfólio de Fernando Vitor Nogueira Caldas, desenvolvedor com experiência em PHP, JavaScript, MySQL e mais.">
-    <meta name="twitter:image" content="img/portfolio_cover.png">
-    <meta name="twitter:site" content="@fvnog">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter Tight"', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#121212',
+                        accent: '#10b981',
+                        background: '#09090b',
+                        surface: '#18181b',    
+                        primary: '#10b981',   
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Scripts JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+
+        .card-image-container {
+            position: relative;
+            overflow: hidden;
+            background-color: #1a1a1a;
+        }
+        
+        .card-image-container img {
+            transition: transform 0.5s ease;
+        }
+        
+        .group:hover .card-image-container img {
+            transform: scale(1.05);
+        }
+
+        .glass-card {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+
+        .bg-noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.03;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .border-subtle {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-accent-gradient {
+            background: linear-gradient(to right, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .project-preview {
+            pointer-events: none;
+            transform: scale(0.25);
+            transform-origin: top left;
+            width: 400%;
+            height: 400%;
+        }
+
+        .preview-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 1rem 1rem 0 0;
+            position: relative;
+            background: #18181b;
+        }
+
+        .skill-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+        @media (max-width: 768px) {
+            .preview-wrapper {
+                height: 180px;
+            }
+        }
+    </style>
 </head>
+<body class="antialiased">
+    <div class="bg-noise"></div>
 
-<body>
+    <div class="fixed top-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/05 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight">FN<span class="text-accent">.</span></a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors">Sobre</a>
+                <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projetos</a>
+                <a href="#experience" class="hover:text-white transition-colors">Carreira</a>
+            </div>
 
+            <a href="#contact" class="hidden md:block px-5 py-2 text-sm font-semibold bg-white text-black rounded-full hover:bg-gray-200 transition-colors">
+                Fale Comigo
+            </a>
 
-
-    <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center text-center text-white">
-        <div class="container">
-            <img src="img/LOGO.png" class="img-fluid" alt="">
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
         </div>
-    </section>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about" class="container mt-5">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-card border-l border-white/10 z-50 p-6">
+        <button id="close-menu" class="absolute top-4 right-4 p-2">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+        
+        <div class="flex flex-col gap-6 mt-12 text-lg font-medium">
+            <a href="#about" class="hover:text-accent transition-colors">Sobre</a>
+            <a href="#stack" class="hover:text-accent transition-colors">Stack</a>
+            <a href="#projects" class="hover:text-accent transition-colors">Projetos</a>
+            <a href="#experience" class="hover:text-accent transition-colors">Carreira</a>
+            <a href="#contact" class="px-6 py-3 bg-accent text-black rounded-full font-semibold text-center">
+                Contato
+            </a>
+        </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="profile-container mb-3 text-center">
-                            <img src="img/profile.jpg" alt="Perfil" class="profile-img">
-                        </div>
-
-                        <h2 class="title-card">FERNANDO NOGUEIRA</h2>
-
-                        <h2 class="title-card">Sobre Mim</h2>
-                        <p class="text-start">Sou desenvolvedor full stack com mais de 5 anos de experiência em
-                            desenvolvimento web, especializado em PHP, MySQL, HTML, CSS e JavaScript. Atualmente, estou
-                            no último semestre do curso de Ciência da Computação na Faculdade Única (8º período), onde
-                            estou aprimorando meus conhecimentos técnicos e aprofundando minha experiência prática.</p>
-
-                        <p>Atuei como desenvolvedor na Resultar Mind por 1 ano, onde fui responsável por criar soluções
-                            integradas entre frontend e backend, garantindo a funcionalidade e usabilidade dos projetos.
-                            Durante essa experiência, trabalhei diretamente com banco de dados MySQL, desenvolvendo
-                            habilidades para adaptar-me a outras tecnologias de banco de dados, conforme a necessidade
-                            dos projetos. Essa vivência ampliou minha capacidade de entregar projetos completos,
-                            eficientes e com grande valor agregado.</p>
-
-                        <p>Ao longo da minha carreira, aprendi a lidar com desafios complexos e a desenvolver soluções
-                            que otimizam processos e melhoram a experiência do usuário. Tenho flexibilidade para
-                            trabalhar tanto remotamente quanto presencialmente, sempre mantendo a mesma eficiência e
-                            comprometimento. Meu objetivo é continuar evoluindo na área de desenvolvimento, e estou
-                            constantemente aberto a novos desafios e disposto a aprender novas tecnologias para expandir
-                            minhas capacidades.</p>
-                    </div>
+<header class="pt-32 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            
+            <div class="relative group shrink-0">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-blue-500 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                <img src="img/profile.jpg" alt="Fernando Nogueira" class="relative w-40 h-40 md:w-56 md:h-56 rounded-full object-cover border-4 border-surface shadow-2xl z-10">
+                
+                <div class="absolute -bottom-2 -right-2 bg-surface border border-white/10 px-3 py-1 rounded-full flex items-center gap-2 shadow-lg z-20">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="text-xs font-bold text-gray-300">5+ Anos Exp.</span>
                 </div>
             </div>
 
-
-            <div class="col-md-6">
-
-                <div class="text-start text-white">
-                    <h2 class="title-card mb-3">INFORMAÇÕES PESSOAIS</h2>
-
-                    <!-- Nome Completo -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-id-card me-2"></i>Nome Completo: <span
-                            class="text-white">Fernando Vitor Nogueira Caldas</span></h5>
-
-                    <!-- Cidade -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-city me-2"></i>Cidade: <span
-                            class="text-white">Santana do Paraíso, MG</span></h5>
-
-                    <!-- Bairro -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-map-marker-alt me-2"></i>Bairro: <span
-                            class="text-white">Cidade Nova</span></h5>
-
-                    <!-- Email -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-envelope me-2"></i>Email: <span
-                            class="text-white">fernandovnc1@gmail.com</span></h5>
-
-                    <!-- Número de Telefone -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-phone me-2"></i>Telefone: <span
-                            class="text-white">+55 (33) 9 9992-8568</span></h5>
-
-                    <!-- Idade -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-birthday-cake me-2"></i>Idade: <span
-                            class="text-white">22 anos</span></h5>
-
-                    <!-- Nacionalidade -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-flag me-2"></i>Nacionalidade: <span
-                            class="text-white">Brasileira</span></h5>
-
-                    <!-- Estado Civil -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-heart me-2"></i>Estado Civil: <span
-                            class="text-white">Casado</span></h5>
-
-                    <!-- Hobbies -->
-                    <h5 class="card-title text-indigo"><i class="fa-solid fa-futbol me-2"></i>Hobbies: <span
-                            class="text-white">Futebol, Leitura, Programação</span></h5>
-
-
-
-                    <div class="button-group pt-2">
-                        <button onclick="window.location.href='https://github.com/fvnog'">
-                            <span class="text"> <i class="fa-brands fa-github"></i> GitHub</span>
-                        </button>
-                        <button
-                            onclick="window.location.href='https://www.linkedin.com/in/fernando-nogueira-developer/'">
-                            <span class="text"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
-                        </button>
-                        <button onclick="window.location.href='https://www.instagram.com/fvnog/'">
-                            <span class="text"><i class="fa-brands fa-instagram"></i> Instagram</span>
-                        </button>
-                    </div>
-
+            <div class="text-center md:text-left space-y-6">
+                <div>
+                    <h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Full Stack Developer</h2>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                        Fernando <br class="md:hidden"> Nogueira
+                    </h1>
                 </div>
+                
+                <p class="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                    Especialista em criar soluções web de alto impacto. Transformo ideias complexas em sistemas escaláveis usando 
+                    <span class="text-white font-medium">Laravel</span>, 
+                    <span class="text-white font-medium">PHP</span> e 
+                    <span class="text-white font-medium">Inteligência Artificial</span>.
+                </p>
 
-                <div class="text-start pt-5 text-white">
-                    <h2 class="title-card mb-3">EXPERIÊNCIA PROFISSIONAL</h2>
-                    <h5 class="card-title text-indigo">
-                        <i class="fa-solid fa-laptop-code me-2"></i> Desenvolvedor Full Stack na Resultar Mind <span
-                            class="text-muted mx-3">1 ano</span>
-                    </h5>
-                    <p class="card-text">
-                        Trabalhei com banco de dados MySQL, integração de frontend e backend, e adaptação a diferentes
-                        tecnologias para atender às necessidades dos projetos.
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#contact" class="bg-primary hover:bg-emerald-400 text-black font-bold px-8 py-3 rounded-xl transition-all hover:scale-105 active:scale-95">
+                        Falar Comigo
+                    </a>
+                    <a href="#projects" class="glass-card px-8 py-3 rounded-xl font-bold hover:bg-white/5 transition-all">
+                        Ver Projetos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<section id="stack" class="py-12 border-y border-white/5 bg-white/[0.02]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <p class="text-center text-gray-500 text-xs sm:text-sm mb-8 sm:mb-12 uppercase tracking-widest font-semibold">Tecnologias</p>
+        
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 sm:gap-8 md:gap-10">
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-php-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">PHP</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-laravel-original colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Laravel</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-mysql-original colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">MySQL</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-postgresql-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">PostgreSQL</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-mongodb-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">MongoDB</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-javascript-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">JavaScript</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-react-original colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">React</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-css3-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">CSS3</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-tailwindcss-original colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Tailwind</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-python-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Python</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-bootstrap-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Bootstrap</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-git-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Git</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-github-original text-white text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">GitHub</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-docker-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Docker</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-postman-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Postman</span>
+            </div>
+            
+            <div class="flex flex-col items-center gap-2 sm:gap-3 group">
+                <i class="devicon-redis-plain colored text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform"></i>
+                <span class="text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity font-medium">Redis</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="projects" class="py-16 sm:py-32 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 sm:mb-16 gap-4">
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Projetos</h2>
+                <p class="text-gray-400">Soluções reais desenvolvidas para empresas e clientes</p>
+            </div>
+            <a href="https://github.com/fvnog" class="hidden md:flex items-center gap-2 text-accent hover:underline">
+                Ver todo o código <i class="ph ph-arrow-up-right"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="project-card bg-card rounded-2xl overflow-hidden border border-white/5 group">
+                <div class="preview-wrapper">
+                    <iframe src="https://plox.com.br" class="project-preview" loading="lazy"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors">Portal PLOX Brasil</h3>
+                        <a href="https://plox.com.br" target="_blank" class="text-gray-500 group-hover:text-accent transition-colors">
+                            <i class="ph ph-arrow-up-right text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Maior portal de notícias do Brasil. Sistema híbrido (PostgreSQL/MongoDB) + integração IA (ChatGPT, Gemini, Perplexity).
                     </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">Laravel</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">MongoDB</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">AI</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">PostgreSQL</span>
+                    </div>
                 </div>
-
-
-
-
-
             </div>
 
-            <div class="col-md-12 mt-5">
-
-                <h2 class="title-card mb-3 text-center">Minhas Competências</h2>
-                <p class="text-white fw-bold mb-3 text-center">Aqui estão algumas das minhas principais competências
-                    adquiridas ao longo da minha jornada de aprendizado.</p>
-
-                <div class="row pt-4">
-                    <!-- Competência 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow bg-dark h-100 text-white">
-                            <div class="card-body text-start">
-                                <i class="fa-solid fa-graduation-cap fa-2x text-indigo"></i>
-                                <h5 class="card-title mt-2">Faculdade Única (Ciência da Computação) <span
-                                        class="text-muted">4 anos</span></h5>
-                                <p class="card-text">Bacharelado em Ciência da Computação, com foco em desenvolvimento
-                                    de software, bancos de dados, algoritmos e estruturas de dados.</p>
-                            </div>
-                        </div>
+            <div class="project-card bg-card rounded-2xl overflow-hidden border border-white/5 group">
+                <div class="preview-wrapper">
+                    <iframe src="https://swatce.com.br" class="project-preview" loading="lazy"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors">SWAT CE</h3>
+                        <a href="https://swatce.com.br" target="_blank" class="text-gray-500 group-hover:text-accent transition-colors">
+                            <i class="ph ph-arrow-up-right text-xl"></i>
+                        </a>
                     </div>
-
-                    <!-- Competência 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow bg-dark h-100 text-white">
-                            <div class="card-body text-start">
-                                <i class="fa-solid fa-code fa-2x text-indigo"></i>
-                                <h5 class="card-title mt-2">Desenvolvimento Web Completo <span class="text-muted">120
-                                        horas</span></h5>
-                                <p class="card-text">Formação intensiva em desenvolvimento web, com PHP, MySQL,
-                                    JavaScript, CSS, e frameworks como Bootstrap.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Competência 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow bg-dark h-100 text-white">
-                            <div class="card-body text-start">
-                                <i class="fa-solid fa-database fa-2x text-indigo"></i>
-                                <h5 class="card-title mt-2">GraphQL: Criando APIs Profissionais <span
-                                        class="text-muted">15 horas</span></h5>
-                                <p class="card-text">Curso de APIs usando GraphQL, focado em eficiência, flexibilidade e
-                                    boas práticas de desempenho.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Competência 4 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow bg-dark h-100 text-white">
-                            <div class="card-body text-start">
-                                <i class="fa-solid fa-server fa-2x text-indigo"></i>
-                                <h5 class="card-title mt-2">PHP e MySQL para Iniciantes a Avançado <span
-                                        class="text-muted">40 horas</span></h5>
-                                <p class="card-text">Curso completo sobre PHP e MySQL, abordando segurança, otimização e
-                                    boas práticas de codificação.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Competência 5 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow bg-dark h-100 text-white">
-                            <div class="card-body text-start">
-                                <i class="fa-brands fa-js fa-2x text-indigo"></i>
-                                <h5 class="card-title mt-2">JavaScript Moderno <span class="text-muted">30 horas</span>
-                                </h5>
-                                <p class="card-text">Curso focado em ES6+, funções assíncronas, manipulação do DOM e
-                                    integração com APIs externas.</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Competência 7 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow bg-dark h-100 text-white">
-                            <div class="card-body text-start">
-                                <i class="fa-brands fa-react fa-2x text-indigo"></i>
-                                <h5 class="card-title mt-2">React para Desenvolvedores <span class="text-muted">25
-                                        horas</span></h5>
-                                <p class="card-text">Curso de ReactJS abordando componentes, estados, hooks, roteamento
-                                    e integração com APIs externas.</p>
-                            </div>
-                        </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Plataforma de gerenciamento para corporação de jogo com painel admin completo, suportando 200+ usuários.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">PHP</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">JavaScript</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">API</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">Bootstrap</span>
                     </div>
                 </div>
+            </div>
 
+            <div class="project-card bg-card rounded-2xl overflow-hidden border border-white/5 group">
+                <div class="preview-wrapper">
+                    <iframe src="https://microlinsgv.com.br" class="project-preview" loading="lazy"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-bold text-white group-hover:text-accent transition-colors">Microlins GV</h3>
+                        <a href="https://microlinsgv.com.br" target="_blank" class="text-gray-500 group-hover:text-accent transition-colors">
+                            <i class="ph ph-arrow-up-right text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Site institucional com sistema de gerenciamento de cursos, aumentando conversão de leads em 35%.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">PHP</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">Laravel</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">JavaScript</span>
+                        <span class="px-2.5 py-1 bg-white/5 rounded-md text-xs border border-white/10">Bootstrap</span>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
+ <section id="experience" class="py-16 sm:py-32 bg-black/40 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 sm:mb-16">Trajetória Profissional</h2>
 
+        <div class="space-y-8 sm:space-y-12 relative before:absolute before:left-[9px] sm:before:left-5 before:top-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent md:before:inset-0 md:before:ml-5 md:before:-translate-x-px md:before:mx-auto md:before:translate-x-0">
+            
+            <div class="relative flex items-start gap-4 sm:gap-6 md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="flex items-center justify-center w-5 h-5 sm:w-10 sm:h-10 rounded-full border border-white/10 bg-card shadow shrink-0 mt-1 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="w-2 h-2 sm:w-3 sm:h-3 bg-accent rounded-full animate-pulse"></span>
+                </div>
+                <div class="flex-1 md:w-[calc(50%-2.5rem)] bg-card p-4 sm:p-6 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                        <span class="font-bold text-accent text-sm sm:text-base">PLOX Brasil</span>
+                        <time class="text-xs text-gray-500">Jan 2024 - Atual</time>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-3">Desenvolvedor Full Stack</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Liderei o redesenho completo do portal de notícias plox.com.br, o maior portal de notícias do Brasil, alcançando milhões de usuários mensais</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Construí arquitetura robusta do frontend utilizando Laravel e Tailwind CSS, garantindo interface moderna, responsiva e otimizada para performance</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Desenvolvi backend escalável em Laravel com arquitetura MVC, implementando APIs RESTful para integração com múltiplos serviços</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Implementei sistema híbrido de banco de dados utilizando PostgreSQL para dados relacionais e MongoDB para armazenamento de conteúdo não estruturado, melhorando performance em 50%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Integrei múltiplas APIs de Inteligência Artificial (ChatGPT, Gemini, Perplexity) para geração automatizada de conteúdo, análise de sentimentos e recomendações personalizadas, aumentando engajamento em 40%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Desenvolvi sistema de automação avançada de redes sociais com agendamento inteligente, publicação multiplataforma e análise de métricas em tempo real, reduzindo tempo de gestão em 70%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Implementei automação de UI com UI Automator para testes automatizados e interações complexas, garantindo qualidade e reduzindo bugs em produção em 45%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Otimizei queries complexas e implementei cache estratégico, reduzindo tempo de carregamento de páginas em 65% e suportando picos de tráfego de 100k+ usuários simultâneos</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-0.5 shrink-0">▸</span>
+                            <span>Integrei sistema de CMS personalizado para gestão de notícias, permitindo publicação rápida e eficiente de conteúdo pela equipe editorial</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-    <!-- Skills Section -->
+            <div class="relative flex items-start gap-4 sm:gap-6 md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-5 h-5 sm:w-10 sm:h-10 rounded-full border border-white/10 bg-card shadow shrink-0 mt-1 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                </div>
+                <div class="flex-1 md:w-[calc(50%-2.5rem)] bg-card p-4 sm:p-6 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                        <span class="font-bold text-white text-sm sm:text-base">Resultar Mind</span>
+                        <time class="text-xs text-gray-500">Jan 2023 - Dez 2023</time>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-3">Desenvolvedor Full Stack</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyan-400 mt-0.5 shrink-0">▸</span>
+                            <span>Desenvolvi soluções web completas integrando frontend e backend, garantindo funcionalidade e usabilidade dos projetos através de PHP, Laravel, MySQL e JavaScript</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyan-400 mt-0.5 shrink-0">▸</span>
+                            <span>Construí sistemas escaláveis de e-commerce e gerenciamento de pedidos, processando mais de 1.000 transações mensais com 99.9% de uptime</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyan-400 mt-0.5 shrink-0">▸</span>
+                            <span>Implementei APIs RESTful e integrações com serviços externos (WhatsApp Business API, gateways de pagamento), reduzindo tempo de processamento em 40%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyan-400 mt-0.5 shrink-0">▸</span>
+                            <span>Otimizei queries de banco de dados MySQL, melhorando performance de consultas complexas em até 60% e reduzindo tempo de resposta das aplicações</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-cyan-400 mt-0.5 shrink-0">▸</span>
+                            <span>Colaborei com equipe multidisciplinar de 5 pessoas para entregar 6+ projetos completos no prazo, incluindo e-commerce, sistemas de gestão e plataformas institucionais</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-    <section id="skills" class="bg mt-5">
-        <div class="container pt-3 pb-3">
-            <h2 class="title-card2">Habilidades Técnicas</h2>
-            <div class="row text-center">
-                <div class="col-md-2 col-4">
-                    <img src="img/PHP.svg" class="tech-icon" alt="PHP">
-                    <p class="text-white">PHP</p>
+            <div class="relative flex items-start gap-4 sm:gap-6 md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-5 h-5 sm:w-10 sm:h-10 rounded-full border border-white/10 bg-card shadow shrink-0 mt-1 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
                 </div>
-                <div class="col-md-2 col-4">
-                    <img src="img/MYSQL.png" class="tech-icon" alt="MySQL">
-                    <p class="text-white">MySQL</p>
+                <div class="flex-1 md:w-[calc(50%-2.5rem)] bg-card p-4 sm:p-6 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                        <span class="font-bold text-white text-sm sm:text-base">Projetos Freelance</span>
+                        <time class="text-xs text-gray-500">Jan 2020 - Dez 2023</time>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-3">Desenvolvedor Web Full Stack</h3>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 mt-0.5 shrink-0">▸</span>
+                            <span>Criei plataforma completa de pedidos online para restaurantes (Pronto Pra Pedir) com PDV integrado, sistema de entregas e notificações via WhatsApp, atendendo 10+ estabelecimentos</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 mt-0.5 shrink-0">▸</span>
+                            <span>Desenvolvi site institucional para Microlins GV com sistema de gerenciamento de cursos, aumentando conversão de leads em 35%</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 mt-0.5 shrink-0">▸</span>
+                            <span>Construí gerador de QR Codes web com interface intuitiva, processando 500+ códigos mensais para diversos clientes</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 mt-0.5 shrink-0">▸</span>
+                            <span>Implementei site de gerenciamento para comunidade de jogos (SWAT CE) com painel administrativo completo, suportando 200+ usuários ativos</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-md-2 col-4">
-                    <img src="img/LARAVEL.png" class="tech-icon" alt="LARAVEL">
-                    <p class="text-white">LARAVEL</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="about" class="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-card to-white/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+            <div>
+                <h2 class="text-xl sm:text-2xl font-bold mb-2">Formação Acadêmica</h2>
+                <p class="text-sm sm:text-base text-gray-400">Base sólida em Ciência da Computação</p>
+            </div>
+            <div class="flex items-center gap-4 bg-black/30 p-4 rounded-xl border border-white/5 w-full md:w-auto">
+                <div class="bg-blue-500/20 p-3 rounded-lg text-blue-400">
+                    <i class="ph ph-graduation-cap text-2xl"></i>
                 </div>
-                <div class="col-md-2 col-4">
-                    <img src="img/CSS.png" class="tech-icon" alt="CSS">
-                    <p class="text-white">CSS</p>
-                </div>
-                <div class="col-md-2 col-4">
-                    <img src="img/JS.png" class="tech-icon" alt="JavaScript">
-                    <p class="text-white">JAVASCRIPT</p>
-                </div>
-                <div class="col-md-2 col-4">
-                    <img src="img/PHYTON.png" class="tech-icon" alt="PYTHON">
-                    <p class="text-white">PYTHON</p>
+                <div>
+                    <h3 class="font-bold text-sm sm:text-base">Ciência da Computação</h3>
+                    <p class="text-xs sm:text-sm text-gray-400">Faculdade Única • 8º Período</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS Section -->
-    <!-- PROJECTS Section -->
-    <section id="projects" class="container mt-5 mb-5 text-center">
-        <h2 class="title-card mb-4">Meus Projetos</h2>
-        <p class="text-white fw-bold mb-3">Aqui estão alguns dos projetos que eu desenvolvi. Confira mais detalhes no
-            meu GitHub ou LinkedIn.</p>
+    <footer id="contact" class="pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-6 border-t border-white/5 bg-black">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8">
+                Gostou do meu <br class="sm:hidden">
+                <span class="text-accent">portfólio?</span>
+            </h2>
+            <p class="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto">
+                Estes projetos demonstram minha capacidade de criar soluções escaláveis e performáticas. 
+                Vamos conversar sobre como posso ajudar no seu próximo projeto.
+            </p>
 
-        <div class="row">
-
-            <!-- Project 0 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Projeto Agência de Marketing</h5>
-                        <p class="card-text">Desenvolvimento de uma agência de marketing digital utilizando PHP, MySQL,
-                            Laravel e Bootstrap.</p>
-                        <!-- Iframe for the project -->
-                        <iframe src="https://nexmarketing.com.br/" class="card-img-top" width="100%" height="450"
-                            frameborder="0"></iframe>
-                        <a href="https://nexmarketing.com.br/" class="btn btn-primary w-100 mt-3" target="_blank">Ver
-                            Projeto</a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 sm:mb-16 max-w-2xl mx-auto">
+                <a href="mailto:fernandovnc1@gmail.com" class="group flex flex-col items-center gap-3 p-6 bg-card border border-white/10 rounded-2xl hover:border-accent hover:bg-accent/5 transition-all">
+                    <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center text-accent">
+                        <i class="ph ph-envelope-simple text-2xl"></i>
                     </div>
-                </div>
+                    <div>
+                        <p class="text-xs text-gray-500 mb-1">Email</p>
+                        <p class="font-semibold text-sm">fernandovnc1@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/5533999928568" target="_blank" class="group flex flex-col items-center gap-3 p-6 bg-card border border-white/10 rounded-2xl hover:border-green-500 hover:bg-green-500/5 transition-all">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">
+                        <i class="ph ph-whatsapp-logo text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 mb-1">WhatsApp</p>
+                        <p class="font-semibold text-sm">+55 (33) 9 9992-8568</p>
+                    </div>
+                </a>
             </div>
 
-            <!-- Project 1 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Projeto de E-commerce</h5>
-                        <p class="card-text">Desenvolvimento de uma plataforma de e-commerce utilizando PHP, MySQL,
-                            Laravel e Bootstrap.</p>
-                        <!-- Iframe for the project -->
-                        <iframe src="https://bifashion.com.br/" class="card-img-top" width="100%" height="450"
-                            frameborder="0"></iframe>
-                        <a href="https://bifashion.com.br/" class="btn btn-primary w-100 mt-3" target="_blank">Ver
-                            Projeto</a>
-                    </div>
-                </div>
+            <div class="flex justify-center gap-4 mb-8 sm:mb-12">
+                <a href="https://github.com/fvnog" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card border border-white/10 flex items-center justify-center hover:border-accent hover:text-accent transition-all">
+                    <i class="ph ph-github-logo text-xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/fernando-nogueira-developer/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card border border-white/10 flex items-center justify-center hover:border-accent hover:text-accent transition-all">
+                    <i class="ph ph-linkedin-logo text-xl"></i>
+                </a>
+                <a href="https://instagram.com/fvnog" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card border border-white/10 flex items-center justify-center hover:border-accent hover:text-accent transition-all">
+                    <i class="ph ph-instagram-logo text-xl"></i>
+                </a>
             </div>
 
-            <!-- Project 2 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Sistema de Gerenciamento de Pedidos</h5>
-                        <p class="card-text">Construção de um sistema de gerenciamento de pedidos online para
-                            restaurantes, com PDV, entregas e mensagens via Whatsapp. Utilizando PHP, MySQL, Bootstrap,
-                            API, JS.</p>
-                        <!-- Iframe for the project -->
-                        <iframe src="https://prontoprapedir.com.br/" class="card-img-top" width="100%" height="450"
-                            frameborder="0"></iframe>
-                        <a href="https://prontoprapedir.com.br/" class="btn btn-primary w-100 mt-3" target="_blank">Ver
-                            Página do Projeto</a>
-                        <a href="https://pizzas.prontoprapedir.com.br/" class="btn btn-primary mt-2 w-100"
-                            target="_blank">Ver Projeto</a>
-                    </div>
-                </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs sm:text-sm text-gray-500 gap-4">
+                <p>© 2025 Fernando Nogueira. Desenvolvedor Full Stack.</p>
+                <p class="text-gray-600">Santana do Paraíso, MG • Brasil</p>
             </div>
-
-            <!-- Project 3 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Gerador de QRCodes</h5>
-                        <p class="card-text">Criação de uma aplicação web para gerar QRCodes com PHP, JS, Bootstrap.</p>
-                        <!-- Iframe for the project -->
-                        <iframe src="https://qrcode.resultarmind.com.br/" class="card-img-top" width="100%" height="450"
-                            frameborder="0"></iframe>
-                        <a href="https://qrcode.resultarmind.com.br/" class="btn btn-primary w-100 mt-3"
-                            target="_blank">Ver Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Site para Jogo (Com Painel ADM)</h5>
-                        <p class="card-text">Criação de uma aplicação web para gerenciar uma corporação em um jogo, com
-                            PHP, JS, API, Bootstrap.</p>
-                        <!-- Iframe for the project -->
-                        <iframe src="https://swatalfa.com.br/" class="card-img-top" width="100%" height="450"
-                            frameborder="0"></iframe>
-                        <a href="https://swatalfa.com.br/" class="btn btn-primary w-100 mt-3" target="_blank">Ver
-                            Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Site Institucional (Microlins)</h5>
-                        <p class="card-text">Criação de uma aplicação web para a Microlins referente aos cursos da
-                            plataforma com PHP, Laravel, JS, API, Bootstrap.</p>
-                        <!-- Iframe for the project -->
-                        <iframe src="https://microlinsgv.com.br/" class="card-img-top" width="100%" height="450"
-                            frameborder="0"></iframe>
-                        <a href="https://microlinsgv.com.br/" class="btn btn-primary w-100 mt-3" target="_blank">Ver
-                            Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
-        &copy; <?php echo date("Y"); ?> Fernando Nogueira. Todos os direitos reservados.
     </footer>
 
-    <!-- Bootstrap Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const menuLinks = mobileMenu.querySelectorAll('a');
 
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
 </html>
