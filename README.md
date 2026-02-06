@@ -1,79 +1,86 @@
-# 💼 Portfólio - Fernando Nogueira
+# 💼 Portfólio Profissional - Fernando Nogueira
 
-Portfólio profissional de Fernando Vitor Nogueira Caldas, Desenvolvedor Full Stack especializado em Laravel, PHP, PostgreSQL, MongoDB e Inteligência Artificial.
+Este repositório contém o código-fonte do meu portfólio profissional. O projeto foi desenvolvido com foco em **minimalismo**, **alta performance** e **acessibilidade**, servindo como um cartão de visitas digital para apresentar minha experiência como Desenvolvedor Full Stack e Arquiteto de Software.
 
 🌐 **[Ver Portfólio Online](https://fvnog.github.io)**
 
 ---
 
-## 🚀 Sobre
+## 🚀 Sobre o Projeto
 
-Este é meu portfólio pessoal onde apresento minha trajetória profissional, projetos desenvolvidos e stack de tecnologias que domino. Com mais de 5 anos de experiência, trabalho criando soluções web escaláveis e performáticas.
+O portfólio foi desenhado para ser direto e focado no conteúdo (*Content-First*). Diferente de templates carregados, este projeto prioriza a legibilidade, o SEO técnico e a velocidade de carregamento, refletindo minha filosofia de desenvolvimento de software: eficiência e clareza.
 
-### 📌 Destaques
+### ✨ Principais Funcionalidades
 
-- ✅ **Design moderno e responsivo** - Mobile-first
-- ✅ **Preview automático dos projetos** - Iframes integrados
-- ✅ **Dark theme profissional** - Gradientes emerald/cyan
-- ✅ **Seções completas** - Sobre, Skills, Projetos, Experiência, Contato
-- ✅ **Performance otimizada** - Tailwind CSS via CDN
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **HTML5** - Estrutura semântica
-- **Tailwind CSS** - Framework CSS utility-first
-- **JavaScript Vanilla** - Interações e menu mobile
-- **Devicon** - Ícones de tecnologias
-- **Phosphor Icons** - Ícones modernos
-- **Inter Tight** - Tipografia (Google Fonts)
+- **🌗 Dark Mode & Light Mode**: Alternância de tema com persistência local e detecção automática de preferência do sistema.
+- **🌍 Internacionalização (i18n)**: Suporte completo para **Português (PT)** e **Inglês (EN)** com troca instantânea de conteúdo.
+- **📱 Design Responsivo (Mobile-First)**: Layout totalmente adaptável, com grids otimizados para toque em dispositivos móveis.
+- **🔍 SEO Otimizado**: Implementação de **JSON-LD (Structured Data)** para Rich Snippets, Open Graph tags para redes sociais e meta tags semânticas.
+- **⚡ Alta Performance**: Utilização de Tailwind CSS via CDN e fontes otimizadas para carregamento instantâneo.
 
 ---
 
-## 📂 Estrutura do Projetofvnog.github.io/
-├── index.html          # Página principal
-├── img/                # Imagens e logos
-│   ├── profile.jpg     # Foto de perfil
-│   ├── icon.png        # Favicon
-│   ├── PHP.svg         # Logo PHP
-│   ├── MYSQL.png       # Logo MySQL
-│   ├── LARAVEL.png     # Logo Laravel
-│   ├── CSS.png         # Logo CSS
-│   ├── JS.png          # Logo JavaScript
-│   └── PHYTON.png      # Logo Python
-└── README.md           # Este arquivo
+## 🛠️ Tecnologias Utilizadas no Portfólio
+
+A construção deste site utiliza uma stack leve e moderna:
+
+- **HTML5 Semântico**: Estrutura acessível e organizada.
+- **Tailwind CSS**: Estilização utility-first para consistência visual e responsividade.
+- **JavaScript (ES6+)**: Lógica leve para troca de temas, idiomas e interações.
+- **DevIcons & FontAwesome**: Ícones vetoriais de alta qualidade.
+- **Google Fonts (Roboto)**: Tipografia limpa e profissional.
 
 ---
 
-## 🎨 Seções do Portfólio
+## 💼 Projetos em Destaque
 
-### 1. **Hero Section**
-- Apresentação profissional
-- Foto de perfil colorida
-- Links para GitHub, LinkedIn e Instagram
-- Badge de experiência (+5 anos)
+Apresentação detalhada dos principais projetos com métricas de impacto e stack tecnológica:
 
-### 2. **Stack de Tecnologias**
-16 tecnologias exibidas com Devicon:
-- PHP, Laravel, MySQL, PostgreSQL, MongoDB
-- JavaScript, React, CSS3, Tailwind CSS
-- Python, Bootstrap, Git, GitHub
-- Docker, Postman, Redis
+### 1. 📰 PLOX Brasil (Portal de Notícias)
+* **Impacto:** Suporte a 100k+ usuários simultâneos e milhões de acessos mensais.
+* **Tech:** Laravel, Reverb, MongoDB, Redis, Python, n8n, AI Integration (GPT/Gemini).
+* **Destaque:** Banco de dados híbrido (SQL/NoSQL), automação de UI e gestão de redes sociais.
 
-### 3. **Projetos**
-7 projetos principais com preview automático:
-1. **PLOX Brasil** - Maior portal de notícias do Brasil
-2. **Nex Marketing** - Agência digital
-3. **SWAT CE** - Plataforma de gerenciamento
+### 2. ⚰️ Vitória Artigos Funerários (ERP & Vendas)
+* **Impacto:** Gestão financeira complexa e controle logístico rigoroso.
+* **Tech:** Laravel, Bootstrap, API Financeira, MySQL.
+* **Destaque:** Emissão de orçamentos, PDV integrado, gestão de rotas e múltiplos meios de pagamento.
 
-### 4. **Experiência Profissional
-Timeline completa com 3 posições:
-- **PLOX Brasil** (2024 - Atual) - Desenvolvedor Full Stack
-- **Resultar Mind** (2023) - Desenvolvedor Full Stack
-- **Freelance** (2020 - 2023) - Desenvolvedor Web Full Stack
+### 3. 🏫 Microlins GV (Institucional)
+* **Impacto:** Aumento de 35% na conversão de leads através de UX/UI.
+* **Tech:** Laravel, Tailwind CSS, Vite, SEO Técnico.
+* **Destaque:** Sistema personalizado de gerenciamento de cursos e matrículas.
 
-### 5. Contato
-- Email: fernandovnc1@gmail.com
-- WhatsApp: +55 (33) 9 9992-8568
-- Links para redes sociais
+### 4. 🛵 Pronto Pra Pedir (SaaS Delivery)
+* **Impacto:** Plataforma multi-tenancy atendendo diversos estabelecimentos gastronômicos.
+* **Tech:** PHP, WhatsApp Business API, PDV Integrado.
+* **Destaque:** Notificações automáticas de status de pedido via WhatsApp.
+
+---
+
+## ⏳ Experiência Profissional
+
+- **PLOX Brasil** (2024 - Atual) - *Tech Lead & Full Stack Developer*
+- **Resultar Mind** (2023) - *Full Stack Developer*
+- **Freelance** (2020 - 2023) - *Full Stack Web Developer*
+
+---
+
+## 💻 Habilidades & Tech Stack
+
+- **Backend:** PHP, Laravel, Node.js, Python.
+- **Database:** PostgreSQL, MongoDB, Redis, MySQL.
+- **Frontend:** React, Tailwind CSS, JavaScript, Vite, Bootstrap.
+- **DevOps/Tools:** Docker, Git, Linux, n8n, AI APIs (OpenAI/Google).
+
+---
+
+## 📬 Contato
+
+Estou disponível para projetos de arquitetura de software, desenvolvimento full stack e consultoria em integração de IA.
+
+- **Email:** fernandovnc1@gmail.com
+- **LinkedIn:** [fernando-nogueira-developer](https://linkedin.com/in/fernando-nogueira-developer)
+- **GitHub:** [@fvnog](https://github.com/fvnog)
+
+---
