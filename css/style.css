@@ -63,3 +63,6 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
 
 .skill-group { min-width: 0; }
 .skill-group h3 { font-size: 14px; line-height: 1.45; }
+
+/* Equal prominence for the two main case studies. */
+.featured-project + .featured-project { margin-top: 24px; }
