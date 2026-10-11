@@ -160,3 +160,20 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
   .stack-items { gap: 12px 17px; }
   .project-stack-grouped .technology { font-size: 9px; }
 }
+
+/* Keep the main PLOX stack visible; disclose the complete list on demand. */
+.project-technologies { position: relative; }
+.project-stack-primary { padding-right: 250px; min-height: 61px; align-items: center; }
+.stack-toggle { position: absolute; top: 0; right: 32px; min-height: 61px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 9px; cursor: pointer; list-style: none; }
+.stack-toggle::-webkit-details-marker { display: none; }
+.stack-toggle:hover { color: var(--green); }
+.stack-toggle svg { width: 13px; height: 13px; transition: transform .2s; }
+.stack-collapse { display: none; }
+.stack-details[open] .stack-expand { display: none; }
+.stack-details[open] .stack-collapse { display: inline; }
+.stack-details[open] .stack-toggle svg { transform: rotate(180deg); }
+.stack-details .project-stack-grouped { background: #0d131a; }
+@media (max-width: 950px) {
+  .project-stack-primary { padding-right: 24px; padding-bottom: 12px; }
+  .stack-toggle { position: static; min-height: 38px; width: fit-content; margin: 0 24px 12px; font-size: 10px; }
+}
