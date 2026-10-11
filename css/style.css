@@ -70,3 +70,18 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
 /* Expertise remains compact while separating business and technical domains. */
 .skills-grid { row-gap: 36px; }
 .skill-symbol { font-size: 16px; }
+
+/* A warm, distinct palette for the Vitória ERP case study. */
+#vitoria {
+  --panel: #1b1814;
+  --text: #eee6dc;
+  --muted: #b7ac9d;
+  --dim: #aa9b87;
+  --line: #40382e;
+  --green: #e8be86;
+  color: var(--text);
+}
+#vitoria .project-toolbar { background: #241f19; }
+#vitoria .project-lead { color: #d7cbbb; }
+#vitoria .step { background: #30261c; border-color: #645039; }
+#vitoria summary { color: #cfbfae; }
