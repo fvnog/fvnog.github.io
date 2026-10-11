@@ -147,13 +147,13 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
   .site-footer > a { margin-left: auto; }
 }
 
-/* PLOX: a complete stack, grouped into compact readable rows. */
+/* Project stacks grouped into compact readable rows. */
 .project-stack-grouped { display: grid; gap: 0; padding-block: 9px; }
 .stack-row { display: grid; grid-template-columns: 142px minmax(0, 1fr); gap: 16px; align-items: baseline; padding-block: 14px; }
-.stack-row + .stack-row { border-top: 1px solid #26313b80; }
-.stack-label { color: #a4b2c0; font-size: 9px; line-height: 1.8; }
+.stack-row + .stack-row { border-top: 1px solid var(--line); }
+.stack-label { color: var(--dim); font-size: 9px; line-height: 1.8; }
 .stack-items { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
-.project-stack-grouped .technology { color: #9caaba; line-height: 1.8; }
+.project-stack-grouped .technology { color: var(--muted); line-height: 1.8; }
 @media (max-width: 700px) {
   .stack-row { grid-template-columns: 1fr; gap: 10px; padding-block: 16px; }
   .stack-label { font-size: 9px; }
@@ -161,7 +161,7 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
   .project-stack-grouped .technology { font-size: 9px; }
 }
 
-/* Keep the main PLOX stack visible; disclose the complete list on demand. */
+/* Keep each main stack visible; disclose the complete list on demand. */
 .project-technologies { position: relative; }
 .project-stack-primary { padding-right: 250px; min-height: 61px; align-items: center; }
 .stack-toggle { position: absolute; top: 0; right: 32px; min-height: 61px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 9px; cursor: pointer; list-style: none; }
@@ -172,8 +172,11 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
 .stack-details[open] .stack-expand { display: none; }
 .stack-details[open] .stack-collapse { display: inline; }
 .stack-details[open] .stack-toggle svg { transform: rotate(180deg); }
-.stack-details .project-stack-grouped { background: #0d131a; }
+.stack-details .project-stack-grouped { background: var(--stack-bg, #0d131a); }
 @media (max-width: 950px) {
   .project-stack-primary { padding-right: 24px; padding-bottom: 12px; }
   .stack-toggle { position: static; min-height: 38px; width: fit-content; margin: 0 24px 12px; font-size: 10px; }
 }
+
+#vitoria { --stack-bg: #161410; }
+#avn { --stack-bg: #101625; }
