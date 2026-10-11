@@ -66,3 +66,7 @@ nav a{display:flex;align-items:center;min-height:44px}.language{min-height:44px;
 
 /* Equal prominence for the two main case studies. */
 .featured-project + .featured-project { margin-top: 24px; }
+
+/* Expertise remains compact while separating business and technical domains. */
+.skills-grid { row-gap: 36px; }
+.skill-symbol { font-size: 16px; }
