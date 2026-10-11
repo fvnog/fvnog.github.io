@@ -1,0 +1,1 @@
+Technology icons vendored from Devicon (7330accdbc47e2dc0c19789a48533c4a3c50fe58) and Simple Icons (dc7b10662a0a2cfdfc9305e2a2b06c023c30724a). See included licenses. Brand icons identify technologies used; other capability icons are original SVG drawings.
